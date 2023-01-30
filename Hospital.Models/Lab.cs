@@ -4,7 +4,8 @@
     {
         public int Id { get; set; }
         public string LabNumber { get; set; }
-        public ApplicationUser Patient { get; set; }
+        public int UserId { get; set; }
+        public User Patient { get; set; }
         public string TestType { get; set; }
         public string TestCode { get; set; }
         public int Weight { get; set; }

@@ -1,4 +1,6 @@
-﻿namespace Hospital.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Hospital.Models
 {
     public class Appointment
     {
@@ -7,7 +9,7 @@
         public string Type { get; set; }
         public DateTime CreatedDate { get; set; }
         public string Description { get; set; }
-        public ApplicationUser Doctor { get; set; }
-        public ApplicationUser Patient { get; set; }
+        public User Doctor { get; set; }
+        public User Patient { get; set; }
     }
 }

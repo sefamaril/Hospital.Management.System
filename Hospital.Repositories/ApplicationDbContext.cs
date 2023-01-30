@@ -16,7 +16,7 @@ namespace Hospital.Repositories
         {
             
         }
-        public DbSet<ApplicationUser> ApplicationUsers { get; set; }
+        public DbSet<User> ApplicationUsers { get; set; }
         public DbSet<Appointment> Appointments { get; set; }
         public DbSet<Bill> Bills { get; set; }
         public DbSet<Contact> Contacts { get; set; }
@@ -30,6 +30,7 @@ namespace Hospital.Repositories
         public DbSet<PrescribedMedicine> PrescribedMedicines { get; set; }
         public DbSet<Room> Rooms { get; set; }
         public DbSet<Supplier> Suppliers { get; set; }
+        public DbSet<TestPrice> TestPrices { get; set; }
     
     }
 }

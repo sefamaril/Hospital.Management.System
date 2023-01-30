@@ -43,7 +43,7 @@ namespace Hospital.Utilities
             var AppUser = _context.ApplicationUsers.FirstOrDefault(x => x.Email == "info@sefamaril.com");
             if (AppUser == null)
             {
-                var result = _userManager.CreateAsync(new ApplicationUser
+                var result = _userManager.CreateAsync(new User
                 {
                     UserName = "sefamaril",
                     Email = "info@sefamaril.com"

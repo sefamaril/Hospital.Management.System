@@ -7,7 +7,7 @@
         public string Type { get; set; }
         public decimal Cost { get; set; }
         public string Description { get; set; }
-        public ICollection<MedicineReport> MedicineReport { get; set; }
-        public ICollection<PrescribedMedicine> PrescribedMedicine { get; set; }
+        public ICollection<MedicineReport> MedicineReports { get; set; }
+        public ICollection<PrescribedMedicine> PrescribedMedicines { get; set; }
     }
 }
