@@ -1,14 +1,18 @@
-﻿namespace Hospital.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Hospital.Models
 {
-    public class Payroll
+    public class Payroll : Base
     {
-        public int Id { get; set; }
-        public User EmployeeId { get; set; }
         public decimal Salary { get; set; }
         public decimal NetSalary { get; set; }
         public decimal HourlySalary { get; set; }
         public decimal BonusSalary { get; set; }
         public decimal Compensation { get; set; }
         public string AccountNumber { get; set; }
+
+        public string EmployeeId { get; set; }
+        [ForeignKey(nameof(EmployeeId))]
+        public virtual User Employee { get; set; }
     }
 }

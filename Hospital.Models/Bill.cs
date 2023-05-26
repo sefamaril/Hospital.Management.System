@@ -1,19 +1,26 @@
-﻿namespace Hospital.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Hospital.Models
 {
-    public class Bill
+    public class Bill : Base
     {
-        public int Id { get; set; }
         public int BillNumber { get; set; }
-        public User Patient { get; set; }
-        public Insurance Insurance { get; set; }
-        public int DoctorCharge { get; set; }
+        public decimal DoctorCharge { get; set; }
         public decimal MedicineCharge { get; set; }
         public decimal RoomCharge { get; set; }
         public decimal OperationCharge { get; set; }
         public int NoOfDays { get; set; }
-        public int NursingCharge { get; set; }
-        public int LabCharge { get; set; }
+        public decimal NursingCharge { get; set; }
+        public decimal LabCharge { get; set; }
         public decimal Advance { get; set; }
         public decimal TotalBill { get; set; }
+
+        public string PatientId { get; set; }
+        [ForeignKey("PatientId")]
+        public virtual User Patient { get; set; }
+
+        public Guid InsuranceId { get; set; }
+        [ForeignKey("InsuranceId")]
+        public virtual Insurance Insurance { get; set; }
     }
 }

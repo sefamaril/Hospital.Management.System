@@ -1,11 +1,13 @@
-﻿namespace Hospital.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Hospital.Models
 {
-    public class Insurance
+    public class Insurance : Base
     {
-        public int Id { get; set; }
         public string PolicyNumber { get; set; }
-        public string StartDate { get; set; }
-        public string EndDate { get; set; }
-        public ICollection<Bill> Bill { get; set; }
+        public DateTime StartDate { get; set; }
+        public DateTime EndDate { get; set; }
+        [NotMapped]
+        public ICollection<Bill> Bills { get; set; }
     }
 }
