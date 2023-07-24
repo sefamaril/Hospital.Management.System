@@ -13,7 +13,7 @@ namespace Hospital.ViewModels
         public HospitalInfoViewModel() { }
         public HospitalInfoViewModel(HospitalInfo model)
         {
-            Id = model.Id;
+            Id = 0;
             Name = model.Name;
             Type = model.Type;
             City = model.City;
@@ -22,8 +22,9 @@ namespace Hospital.ViewModels
         }
         public HospitalInfo ConvertViewModel(HospitalInfoViewModel model)
         {
-            return new HospitalInfo{
-                Id = model.Id,
+            return new HospitalInfo
+            {
+                Id = Guid.NewGuid(),
                 Name = model.Name,
                 Type = model.Type,
                 City = model.City,

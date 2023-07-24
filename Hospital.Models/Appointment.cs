@@ -2,14 +2,19 @@
 
 namespace Hospital.Models
 {
-    public class Appointment
+    public class Appointment : Base
     {
-        public int Id { get; set; }
         public string Number { get; set; }
         public string Type { get; set; }
-        public DateTime CreatedDate { get; set; }
+        public DateTime AppointmentDate { get; set; }
         public string Description { get; set; }
-        public User Doctor { get; set; }
-        public User Patient { get; set; }
+
+        public string DoctorId { get; set; }
+        [ForeignKey("DoctorId")]
+        public virtual User Doctor { get; set; }
+
+        public string PatientId { get; set; }
+        [ForeignKey("PatientId")]
+        public virtual User Patient { get; set; }
     }
 }

@@ -2,12 +2,14 @@
 
 namespace Hospital.Models
 {
-    public class Contact
+    public class Contact : Base
     {
-        public int Id { get; set; }
-        public int HospitalId { get; set; } 
-        public HospitalInfo HospitalInfo { get; set; }
         public string Email { get; set; }
         public string Phone { get; set; }
+
+        public Guid HospitalId { get; set; }
+        [ForeignKey("HospitalId")]
+        public virtual HospitalInfo HospitalInfo { get; set; }
+
     }
 }

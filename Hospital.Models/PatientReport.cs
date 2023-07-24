@@ -2,13 +2,18 @@
 
 namespace Hospital.Models
 {
-    public class PatientReport
+    public class PatientReport : Base
     {
-        public int Id { get; set; }
         public string Diagnose { get; set; }
-       // public string MedicineName { get; set; }
-        public User Doctor { get; set; }
-        public User Patient { get; set; }
-        public ICollection<PrescribedMedicine> PrescribedMedicine { get; set; }
+
+        public string DoctorId { get; set; }
+        [ForeignKey("DoctorId")]
+        public virtual User Doctor { get; set; }
+
+        public string PatientId { get; set; }
+        [ForeignKey("PatientId")]
+        public virtual User Patient { get; set; }
+        [NotMapped]
+        public ICollection<PrescribedMedicine> PrescribedMedicines { get; set; }
     }
 }
