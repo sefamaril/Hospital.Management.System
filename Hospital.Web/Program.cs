@@ -22,6 +22,7 @@ builder.Services.AddScoped<IDbInitializer, DbInitializer>();
 builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IEmailSender, EmailSender>();
 builder.Services.AddTransient<IHospitalInfo, HospitalInfoService>();
+builder.Services.AddTransient<IRoomService, RoomService>();
 builder.Services.AddRazorPages();
 
 
@@ -45,7 +46,7 @@ app.UseAuthorization();
 app.MapRazorPages();
 app.MapControllerRoute(
     name: "default",
-    pattern: "{Area=Patient}/{controller=Home}/{action=Index}/{id?}");
+    pattern: "{Area=admin}/{controller=Hospitals}/{action=Index}/{id?}");
 
 app.Run();
 void DataSedding()
